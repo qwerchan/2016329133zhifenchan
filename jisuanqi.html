@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算器</title>
+
+<form>
+	第一个数<input type = "text" id = "w" /><br><br>
+	第二个数<input type = "text" id = "e" /><br><br>
+	<input type = "button" value = "+" onclick = "compute('+')" />
+	<input type = "button" value = "-" onclick = "compute('-')" />
+	<input type = "button" value = "×" onclick = "compute('*')" />
+	<input type = "button" value = "÷" onclick = "compute('/')" /><br><br>
+	计算结果<input type = "text" id = "result" />
+</form>
+<script type="text/javascript">
+	function compute(q){
+	var num;
+	var w = Number(document.getElementById("w").value);
+	var e = Number(document.getElementById("e").value);
+	switch(q){
+		case "+":
+			num=w + e;
+			break;
+		case "-":
+			num=w - e;
+			break;
+		case "*":
+			num=w * e;
+			break;
+		case "/":
+			if(e!=0)
+				num=w / e;
+			else
+				num="除数不能为0，请重新输入！";	
+							
+      break;			
+		}
+		document.getElementById("result").value = num;	
+	}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
